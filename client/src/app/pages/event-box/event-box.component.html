@@ -1,0 +1,34 @@
+<div
+  [style.background]="item.backgroundColor"
+  class="event-box"
+  nz-flex
+  [nzVertical]="true"
+  (click)="openModal()"
+>
+  <!-- Sự kiện hiển thị trên lịch chính -->
+  <span class="event-content">
+    {{ item.content }}
+  </span>
+  <ul style="padding-left: 0; list-style-position: inside">
+    <li *ngFor="let detail of item.details" class="item-in-calendar">
+      {{ detail.text }}
+    </li>
+  </ul>
+
+  <!-- Modal Component -->
+  <nz-modal
+    [(nzVisible)]="isVisible"
+    nzTitle="Thông tin chi tiết"
+    (nzOnCancel)="handleCancel()"
+  >
+    <ng-template [nzModalContent]>
+      <ul *ngIf="hasDetails">
+        <li *ngFor="let detail of item.details">{{ detail.text }}</li>
+      </ul>
+      <p *ngIf="!hasDetails">Không có dữ liệu để hiển thị.</p>
+    </ng-template>
+    <ng-template [nzModalFooter]>
+      <!-- <button class="buttonCancel" nzType="primary" (click)="handleCancel()">OK</button> -->
+    </ng-template>
+  </nz-modal>
+</div>

@@ -1,0 +1,107 @@
+<div nz-flex [nzVertical]="false">
+  <!-- Lịch chính -->
+  <nz-calendar class="calendar-main">
+    <!-- Đặt sự kiện cho các ngày -->
+    <ul *nzDateCell="let date" class="events">
+      <ng-container *ngIf="isEventDay(date, [29, 30], 8)">
+        <li *ngFor="let item of listDataMap.valid">
+          <app-event-box [item]="item"></app-event-box>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="isEventDay(date, [1, 2], 9)">
+        <li *ngFor="let item of listDataMap.valid">
+          <app-event-box [item]="item"></app-event-box>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="isEventDay(date, [3], 9)">
+        <li *ngFor="let item of listDataMap.wrongLocation">
+          <app-event-box [item]="item"></app-event-box>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="isEventDay(date, [4], 9)">
+        <li *ngFor="let item of listDataMap.leaveEarly">
+          <app-event-box [item]="item"></app-event-box>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="isEventDay(date, [7], 9)">
+        <li *ngFor="let item of listDataMap.noCheckinData">
+          <app-event-box [item]="item"></app-event-box>
+        </li>
+      </ng-container>
+    </ul>
+
+    <!-- Đặt sự kiện cho các tháng -->
+    <ng-container *nzMonthCell="let month">
+      @if (getMonthData(month); as monthData) {
+      <div class="notes-month">
+        <section>{{ monthData }}</section>
+        <span>Backlog number</span>
+      </div>
+      }
+    </ng-container>
+  </nz-calendar>
+
+  <div nz-flex [nzVertical]="true">
+    <!-- Lịch phụ -->
+    <nz-calendar
+      [nzFullscreen]="false"
+      (nzSelectChange)="onValueChange($event)"
+      (nzPanelChange)="onPanelChange($event)"
+      class="calendar-mini"
+    />
+
+    <!-- Danh sách loại lỗi -->
+    <h3 class="title-ul">Loại lỗi</h3>
+    <ul>
+      <li
+        class="list-error"
+        style="
+          text-decoration: underline;
+          text-decoration-color: #d3ee98;
+          text-decoration-thickness: 3px;
+        "
+      >
+        Hợp lệ
+      </li>
+      <li
+        class="list-error"
+        style="
+          text-decoration: underline;
+          text-decoration-color: #c4d7ff;
+          text-decoration-thickness: 3px;
+        "
+      >
+        Khác địa điểm chấm công
+      </li>
+      <li
+        class="list-error"
+        style="
+          text-decoration: underline;
+          text-decoration-color: #ffcfb3;
+          text-decoration-thickness: 3px;
+        "
+      >
+        Về sớm
+      </li>
+      <li
+        class="list-error"
+        style="
+          text-decoration: underline;
+          text-decoration-color: #98ded9;
+          text-decoration-thickness: 3px;
+        "
+      >
+        Không có dữ liệu chấm công
+      </li>
+    </ul>
+  </div>
+
+  <!-- Nút chuyển sang trang đăng nhập -->
+  <button nz-button nzType="primary" class="login" (click)="navigateToLogin()">
+    Log In
+  </button>
+</div>

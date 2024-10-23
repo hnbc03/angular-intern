@@ -1,0 +1,69 @@
+:host {
+  text-align: center;
+}
+
+nz-header {
+  background: #F5DAD2;
+  /* position: fixed;
+  width: 100%;
+  z-index: 100; */
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: black;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+nz-footer {
+  line-height: 1;
+}
+
+nz-sider {
+  background-color: #fff;
+  color: #fff;
+  min-height: 100vh;
+}
+
+nz-layout {
+  margin-bottom: 48px;
+  width: 100vw;
+  display: flex;
+}
+
+nz-layout nz-layout,
+nz-layout:last-child {
+  margin: 0;
+}
+
+.paw {
+  width: 40px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+.slogan {
+  line-height: 100%;
+  margin-top: 15px;
+  margin-right: 50px;
+  font-family: monospace;
+}
+
+.searchbox {
+  border-radius: 10px;
+  max-width: 200px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+li {
+  list-style-type: none;
+}

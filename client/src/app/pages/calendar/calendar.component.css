@@ -1,0 +1,61 @@
+.events {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.events .ant-badge-status {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.notes-month {
+    text-align: center;
+    font-size: 28px;
+}
+
+.notes-month section {
+    font-size: 28px;
+}
+
+.calendar-mini {
+    width: 300px;
+    margin: 20px 30px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.list-error {
+    list-style-type: none;
+    background: url('../../../assets/check-mark.png') no-repeat left center;
+    background-size: 15px 15px;
+    padding-left: 30px;
+}
+
+.title-ul {
+    font-weight: bold;
+    margin: 0 30px;
+    font-size: 20px;
+}
+
+.item-in-calendar {
+    list-style-type: none;
+    text-align: left;
+}
+
+.calendar-main {
+    border: 1px solid #d9d9d9;
+    height: 100%;
+    margin: 20px 0 20px 20px;
+}
+
+.login {
+    border-radius: 8px;
+    font-weight: bold;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
