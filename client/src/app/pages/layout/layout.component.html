@@ -62,6 +62,11 @@
     <nz-layout>
       <!-- Content -->
       <div style="flex: 1; margin: 30px;">
+        <div *ngIf="role">
+          <button class="btnRole">
+            {{ role === 'admin' ? 'Tài khoản admin đang đăng nhập' : 'Tài khoản user đang đăng nhập' }}
+          </button>
+        </div>
         <router-outlet></router-outlet>
       </div>
 

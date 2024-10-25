@@ -14,12 +14,13 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'homepage', component: HomepageComponent, canActivate: [authGuard] },
-      { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+      { path: 'profile', component: ProfileComponent, canActivate: [authGuard], data: { expectedRole: 'user' } },
     ]
   },
   {
     path: 'calendar',
-    component: CalendarComponent
+    component: CalendarComponent,
+    data: { expectedRole: 'admin' },
   },
   {
     path: 'login',

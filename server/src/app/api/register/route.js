@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export async function POST(req) {
   // Lấy dữ liệu từ request
-  const { email, password, username } = await req.json();
+  const { email, password, username, role } = await req.json();
 
   // Kiểm tra nếu email đã tồn tại
   const existingEmail = await prisma.user.findUnique({
@@ -58,6 +58,7 @@ export async function POST(req) {
       email,
       password: hashedPassword,
       username,
+      role: role || "user",
     },
   });
 
@@ -65,7 +66,7 @@ export async function POST(req) {
     JSON.stringify({
       code: 201,
       message: "User registered successfully",
-      data: { email, username },
+      data: { email, username, role: role || "user" },
     }),
     {
       status: 201,

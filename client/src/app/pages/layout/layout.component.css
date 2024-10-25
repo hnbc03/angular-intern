@@ -67,3 +67,11 @@ nz-layout:last-child {
 li {
   list-style-type: none;
 }
+
+.btnRole {
+  margin-bottom: 30px;
+  background-color: #f5dad2;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+}

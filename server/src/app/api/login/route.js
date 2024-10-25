@@ -54,10 +54,10 @@ export async function POST(req) {
     {
       id: user.id,
       username: user.username,
-      // role: user.role,        // Phân quyền admin hoặc user
+      role: user.role,
     },
     JWT_SECRET,
-    { expiresIn: "1h" } // Thời hạn token
+    { expiresIn: "1h" }
   );
 
   // Trả về token cho client
@@ -66,9 +66,10 @@ export async function POST(req) {
       code: 200,
       message: "Login successful",
       data: {
-        token, // Trả về token để client lưu trữ
+        token,
         username: user.username,
         email: user.email,
+        role: user.role,
       },
     }),
     {
