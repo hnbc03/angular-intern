@@ -1,0 +1,2 @@
+- Chạy frontend: npm start hoặc ng serve
+- Chạy backend: npm run dev
