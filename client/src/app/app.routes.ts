@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { CalendarComponent } from './pages/calendar/calendar.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { LayoutComponent } from './pages/layout/layout.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { authGuard } from './auth.guard';
-import { AccessDeniedComponent } from './pages/access-denied/access-denied.component';
+import { LoginComponent } from './auth/login/login.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
+import { authGuard } from './shared/guards/auth.guard';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/homepage' },
