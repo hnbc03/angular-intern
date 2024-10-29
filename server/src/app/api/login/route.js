@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 
 const prisma = new PrismaClient();
 const JWT_SECRET = "thisisnotasecretkey";
+const REFRESH_TOKEN_SECRET = "thisisalsonotasecretkey";
 
 export async function POST(req) {
   const { usernameOrEmail, password } = await req.json();
@@ -49,7 +50,7 @@ export async function POST(req) {
     );
   }
 
-  // Tạo JWT token
+  // Tạo JWT access token
   const token = jwt.sign(
     {
       id: user.id,
@@ -60,6 +61,19 @@ export async function POST(req) {
     { expiresIn: "1h" }
   );
 
+  // Tạo refresh token
+  const refreshToken = jwt.sign(
+    { id: user.id },
+    REFRESH_TOKEN_SECRET,
+    { expiresIn: "7d" }
+  );
+
+  // Lưu refresh token vào database
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { refreshToken },
+  });
+
   // Trả về token cho client
   return new Response(
     JSON.stringify({
@@ -67,6 +81,7 @@ export async function POST(req) {
       message: "Login successful",
       data: {
         token,
+        refreshToken,
         username: user.username,
         email: user.email,
         role: user.role,
