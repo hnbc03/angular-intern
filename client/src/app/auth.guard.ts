@@ -13,7 +13,7 @@ export const authGuard: CanActivateFn = (route) => {
 
     if (expectedRole && userRole !== expectedRole) {
       console.log("Không có quyền truy cập");
-      router.navigate(['/homepage']);
+      router.navigate(['/access-denied']);
       return false;
     }
 

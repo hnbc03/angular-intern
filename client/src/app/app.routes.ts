@@ -6,6 +6,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { authGuard } from './auth.guard';
+import { AccessDeniedComponent } from './pages/access-denied/access-denied.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/homepage' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {
     path: 'calendar',
     component: CalendarComponent,
+    canActivate: [authGuard],
     data: { expectedRole: 'admin' },
   },
   {
@@ -30,5 +32,9 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-  { path: '**', redirectTo: '' }
+  {
+    path: 'access-denied',
+    component: AccessDeniedComponent
+  },
+  { path: '**', redirectTo: '/homepage' }
 ];
