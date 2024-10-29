@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { RegisterComponent } from './register/register.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
-import { authGuard } from './shared/guards/auth.guard';
+import { authGuard } from './auth.guard';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 export const routes: Routes = [

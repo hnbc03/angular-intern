@@ -8,7 +8,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { CommonModule } from '@angular/common';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
-import { AuthService } from '../shared/services/auth.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-layout',

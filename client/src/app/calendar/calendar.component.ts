@@ -8,7 +8,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPopoverComponent } from 'ng-zorro-antd/popover';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
-import { EventBoxComponent } from '../shared/components/event-box/event-box.component';
+import { EventBoxComponent } from '../event-box/event-box.component';
 
 @Component({
   selector: 'app-calendar',
