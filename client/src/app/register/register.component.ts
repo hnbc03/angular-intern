@@ -31,7 +31,6 @@ import { RouterOutlet, Router } from '@angular/router';
     NzCheckboxModule,
     NzToolTipModule,
     NzIconModule,
-    RouterOutlet,
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',

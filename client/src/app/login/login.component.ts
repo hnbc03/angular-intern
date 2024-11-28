@@ -21,20 +21,19 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ 
-    NzLayoutModule, 
-    NzGridModule, 
-    NzFlexModule, 
-    NzFormModule, 
-    NzIconModule, 
-    NzInputModule, 
+  imports: [
+    NzLayoutModule,
+    NzGridModule,
+    NzFlexModule,
+    NzFormModule,
+    NzIconModule,
+    NzInputModule,
     NzCheckboxModule,
     NzToolTipModule,
-    RouterOutlet,
-    ReactiveFormsModule
-   ],
+    ReactiveFormsModule,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
   validateForm: FormGroup<{
@@ -45,18 +44,20 @@ export class LoginComponent {
   // Hàm submit
   submitForm(): void {
     if (this.validateForm.valid) {
-      this.http.post('http://localhost:3000/api/login', this.validateForm.value).subscribe({
-        next: (response: any) => {
-          if (response.code === 200) {
-            localStorage.setItem('token', response.data.token);
-            this.message.success('Login successfully!');
-            this.router.navigate(['/homepage']);
-          }
-        },
-        error: (error) => {
-          this.message.error(error.error.message || 'Login failed!');
-        },
-      });
+      this.http
+        .post('http://localhost:3000/api/login', this.validateForm.value)
+        .subscribe({
+          next: (response: any) => {
+            if (response.code === 200) {
+              localStorage.setItem('token', response.data.token);
+              this.message.success('Login successfully!');
+              this.router.navigate(['/homepage']);
+            }
+          },
+          error: (error) => {
+            this.message.error(error.error.message || 'Login failed!');
+          },
+        });
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {
@@ -66,13 +67,13 @@ export class LoginComponent {
       });
     }
   }
-  
-  // Khởi tạo 
+
+  // Khởi tạo
   constructor(
     private fb: NonNullableFormBuilder,
     private http: HttpClient,
     private message: NzMessageService,
-    private router: Router,
+    private router: Router
   ) {
     this.validateForm = this.fb.group({
       usernameOrEmail: ['', [Validators.required]],

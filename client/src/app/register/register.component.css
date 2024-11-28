@@ -2,10 +2,22 @@
   width: 600px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
-  background-color: whitesmoke;
+  background-color: #fefefe;
   padding: 50px 0 50px 30px;
   margin-top: 50px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  background: linear-gradient(to right, orange, blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .ant-select.ant-select-in-form-item.phone-select {
@@ -14,4 +26,29 @@
 
 .register-area {
   margin-bottom: 8px;
+}
+
+input {
+  padding: 7px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  height: 50px;
+  background: linear-gradient(to right, #E38E49, #1F509A);
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(
+    to right,
+    #ff7e00,
+    #1e90ff
+  ); /* Đổi màu khi hover */
 }

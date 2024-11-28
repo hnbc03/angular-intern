@@ -49,13 +49,6 @@ nz-layout:last-child {
   cursor: pointer;
 }
 
-.slogan {
-  line-height: 100%;
-  margin-top: 15px;
-  margin-right: 50px;
-  font-family: monospace;
-}
-
 .searchbox {
   border-radius: 10px;
   max-width: 200px;

@@ -1,6 +1,7 @@
 <nz-row nzJustify="center" style="height: 100vh; width: 100vw;">
   <nz-col>
     <div id="register">
+      <h1>CREATE AN ACCOUNT</h1>
       <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
         <!-- Nhập email -->
         <nz-form-item>
@@ -79,7 +80,7 @@
         <!-- Nút đăng ký -->
         <nz-form-item nz-row class="register-area">
           <nz-form-control [nzSpan]="14" [nzOffset]="6">
-            <button nz-button nzType="primary" [disabled]="!validateForm.valid">Register</button>
+            <button nz-button nzType="primary" >Sign up</button>
           </nz-form-control>
         </nz-form-item>
       </form>

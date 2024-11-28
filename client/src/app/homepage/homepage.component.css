@@ -1,4 +1,12 @@
 .inner-box {
-    background: #0092ff;
-    padding: 8px 0;
-  }
+  background: #0092ff;
+  padding: 8px 0;
+}
+
+nz-card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+

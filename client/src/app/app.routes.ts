@@ -14,9 +14,18 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: 'homepage', component: HomepageComponent, canActivate: [authGuard] },
-      { path: 'profile', component: ProfileComponent, canActivate: [authGuard], data: { expectedRole: 'user' } },
-    ]
+      {
+        path: 'homepage',
+        component: HomepageComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [authGuard],
+        data: { expectedRole: 'user' },
+      },
+    ],
   },
   {
     path: 'calendar',
@@ -26,15 +35,15 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'access-denied',
-    component: AccessDeniedComponent
+    component: AccessDeniedComponent,
   },
-  { path: '**', redirectTo: '/homepage' }
+  { path: '**', redirectTo: '/homepage' },
 ];
